@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O'Malley Brothers, Inc. — 94 Years of Mechanical Insulation</title>
+<!-- cache-bust: 2026-08-24T12:40Z -->
+<meta name="description" content="O'Malley Brothers, Inc. — 94 years of commercial insulation, pipe covering, and mechanical subcontracting in the Chicago area. Four generations. Glenview, IL.">
+<style>
+  :root {
+    --ink: #1c1917;
+    --ink-soft: #57534e;
+    --rule: #e7e5e4;
+    --bg: #ffffff;
+    --bg-soft: #fafaf9;
+    --accent: #b91c1c;
+    --accent-dark: #7f1d1d;
+    --warm: #fef3c7;
+    --warm-border: #d97706;
+    --frame: #d6d3d1;
+    --frame-ink: #78716c;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* ============ NAV ============ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav .brand {
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav .brand span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-links a.call-btn {
+    background: var(--accent);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  @media (max-width: 540px) {
+    .nav-links a:not(.call-btn) { display: none; }
+  }
+  /* ============ HERO ============ */
+  .hero {
+    background: var(--bg-soft);
+    padding: 60px 20px 50px;
+    text-align: center;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero .since {
+    display: inline-block;
+    background: var(--warm);
+    color: var(--warm-border);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 32px;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero .lede {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 0 auto 24px;
+  }
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--accent); color: white; }
+  .btn-primary:hover { background: var(--accent-dark); }
+  .btn-ghost { background: white; color: var(--ink); border: 1px solid var(--rule); }
+  /* ============ SECTIONS ============ */
+  section {
+    padding: 50px 20px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  section.tinted { background: var(--bg-soft); max-width: none; }
+  section.tinted > .inner { max-width: 1080px; margin: 0 auto; }
+  h2 {
+    font-size: 26px;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  h2 .accent { color: var(--accent); }
+  .section-lede {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin: 0 0 28px;
+    max-width: 640px;
+  }
+  /* ============ STATS STRIP ============ */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 24px 0;
+  }
+  .stat {
+    padding: 18px 20px;
+    text-align: center;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: white;
+  }
+  .stat:last-child { border-right: none; }
+  .stat .num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat .label {
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 6px;
+  }
+  /* ============ SERVICES ============ */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .service {
+    padding: 22px 20px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: white;
+  }
+  .service h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+  }
+  .service p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  /* ============ GALLERY (placeholder frames) ============ */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .frame {
+    aspect-ratio: 4 / 3;
+    border: 2px dashed var(--frame);
+    background: var(--bg-soft);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--frame-ink);
+    font-size: 12px;
+    text-align: center;
+    padding: 14px;
+  }
+  .frame .icon {
+    font-size: 28px;
+    margin-bottom: 6px;
+    opacity: 0.6;
+  }
+  .frame strong {
+    color: var(--ink-soft);
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  .frame-legend {
+    font-size: 12px;
+    color: var(--frame-ink);
+    margin-top: 14px;
+    text-align: center;
+    font-style: italic;
+  }
+  /* ============ STORY ============ */
+  .story {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  @media (min-width: 720px) {
+    .story { grid-template-columns: 1fr 1fr; }
+  }
+  .story-card {
+    border-left: 3px solid var(--accent);
+    padding: 6px 0 6px 18px;
+  }
+  .story-card .year {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .story-card h3 {
+    margin: 4px 0 6px;
+    font-size: 18px;
+  }
+  .story-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  /* ============ CONTACT ============ */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  @media (min-width: 720px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .contact-card {
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 22px;
+    background: white;
+  }
+  .contact-card h3 {
+    margin: 0 0 14px;
+    font-size: 17px;
+  }
+  .contact-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    font-size: 15px;
+  }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row .label {
+    width: 80px;
+    color: var(--ink-soft);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .contact-row a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  form { display: flex; flex-direction: column; gap: 12px; }
+  label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  input, textarea {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 10px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--bg-soft);
+    color: var(--ink);
+    width: 100%;
+  }
+  textarea { min-height: 90px; resize: vertical; }
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 28px 20px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+    background: var(--bg-soft);
+  }
+  /* ============ MOCKUP BANNER ============ */
+  .mockup-banner {
+    background: var(--warm);
+    color: var(--warm-border);
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--warm-border);
+  }
+  .mockup-banner .icon { margin-right: 8px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#top" class="brand">O'Malley Brothers<span>.</span></a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#story">Our Story</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+18478038920" class="call-btn">Call (847) 803-8920</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="since">SINCE 1931 · GLENVIEW, IL</div>
+  <h1>Four generations of <span class="accent">mechanical insulation</span> in Chicago.</h1>
+  <p class="lede">Commercial insulation, pipe covering, and mechanical subcontracting — done right, on time, by a family that's been doing it since the Hoover administration.</p>
+  <div class="hero-cta">
+    <a href="tel:+18478038920" class="btn btn-primary">Call (847) 803-8920</a>
+    <a href="#contact" class="btn btn-ghost">Request a Quote</a>
+  </div>
+</header>
+
+<section>
+  <div class="stats">
+    <div class="stat"><div class="num">94</div><div class="label">Years in Business</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">Generations</div></div>
+    <div class="stat"><div class="num">23</div><div class="label">Tradespeople</div></div>
+    <div class="stat"><div class="num">100+</div><div class="label">GC Partners</div></div>
+  </div>
+</section>
+
+<section class="tinted" id="services">
+  <div class="inner">
+    <h2>What we <span class="accent">do</span>.</h2>
+    <p class="section-lede">Mechanical insulation for commercial construction across the Chicago metro. Cold and hot systems, pipe covering, ductwork, and acoustic treatments.</p>
+    <div class="services">
+      <div class="service">
+        <h3>Commercial Insulation</h3>
+        <p>Mechanical rooms, mechanical penthouses, and central plants. New construction and retrofit.</p>
+      </div>
+      <div class="service">
+        <h3>Pipe Covering</h3>
+        <p>Hot and cold service pipe insulation. Chilled water, hot water, steam, condensate, refrigerant lines.</p>
+      </div>
+      <div class="service">
+        <h3>Ductwork Insulation</h3>
+        <p>Supply, return, and exhaust duct. External wrap and internal liner per spec.</p>
+      </div>
+      <div class="service">
+        <h3>Acoustic Treatment</h3>
+        <p>Mechanical room and equipment noise control. NRC-rated assemblies.</p>
+      </div>
+      <div class="service">
+        <h3>Removable Insulation</h3>
+        <p>Reusable blankets and pads for valves, fittings, and equipment requiring periodic access.</p>
+      </div>
+      <div class="service">
+        <h3>Energy Retrofit</h3>
+        <p>Insulation upgrades for existing systems. Peoples Gas Trade Ally network member.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <h2>Our <span class="accent">story</span>.</h2>
+  <p class="section-lede">Three generations of family-owned leadership. A fourth taking the wheel. Ninety-four years of doing one thing — and doing it well.</p>
+  <div class="story">
+    <div class="story-card">
+      <div class="year">1931 · FOUNDED</div>
+      <h3>The O'Malley brothers open shop.</h3>
+      <p>Two brothers. One truck. A trade learned in the field, not the classroom. They start with residential and small commercial work across Chicago's North Shore.</p>
+    </div>
+    <div class="story-card">
+      <div class="year">THREE GENERATIONS</div>
+      <h3>A family trade, passed down.</h3>
+      <p>Jack Reddington carries the work forward into the modern commercial era — high-rises, hospitals, central plants. The company earns its place on the GC bid lists.</p>
+    </div>
+    <div class="story-card">
+      <div class="year">TODAY · 4TH GEN</div>
+      <h3>Twin brothers take the wheel.</h3>
+      <p>John and James Reddington — co-vice presidents, fourth generation — are stepping up to lead the company into its next chapter. Same crew. Same standard. New tools.</p>
+    </div>
+    <div class="story-card">
+      <div class="year">NEXT CHAPTER</div>
+      <h3>The trade meets the next generation of GCs.</h3>
+      <p>The next generation of general contractors finds their subs online. We're making sure they find us — with the same work, on the same timeline, that built the reputation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tinted" id="projects">
+  <div class="inner">
+    <h2>Recent <span class="accent">projects</span>.</h2>
+    <p class="section-lede">A small selection of recent mechanical insulation work across the Chicago metro.</p>
+    <div class="gallery">
+      <div class="frame">
+        <div class="icon">📷</div>
+        <strong>Central Plant Insulation</strong>
+        <span>Photo placeholder</span>
+      </div>
+      <div class="frame">
+        <div class="icon">📷</div>
+        <strong>Hospital Mechanical Room</strong>
+        <span>Photo placeholder</span>
+      </div>
+      <div class="frame">
+        <div class="icon">📷</div>
+        <strong>High-Rise Chilled Water</strong>
+        <span>Photo placeholder</span>
+      </div>
+      <div class="frame">
+        <div class="icon">📷</div>
+        <strong>Industrial Pipe Covering</strong>
+        <span>Photo placeholder</span>
+      </div>
+      <div class="frame">
+        <div class="icon">📷</div>
+        <strong>Duct Wrap Installation</strong>
+        <span>Photo placeholder</span>
+      </div>
+      <div class="frame">
+        <div class="icon">📷</div>
+        <strong>Acoustic Treatment</strong>
+        <span>Photo placeholder</span>
+      </div>
+    </div>
+    <p class="frame-legend">[ Photo placeholders — to be replaced with real job-site photos supplied by John / James / crew. ]</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Get in <span class="accent">touch</span>.</h2>
+  <p class="section-lede">Call, email, or send a note. We answer our own phones.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>O'Malley Brothers, Inc.</h3>
+      <div class="contact-row">
+        <span class="label">Phone</span>
+        <a href="tel:+18478038920">(847) 803-8920</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">Email</span>
+        <a href="mailto:Omalleybrothers@msn.com">Omalleybrothers@msn.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">Fax</span>
+        <span>(847) 803-8919</span>
+      </div>
+      <div class="contact-row">
+        <span class="label">Address</span>
+        <a href="https://maps.google.com/?q=4302+Regency+Dr+Glenview+IL+60025" target="_blank" rel="noopener">4302 Regency Dr, Glenview, IL 60025</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">Hours</span>
+        <span>Mon–Fri, 7:00 AM – 4:30 PM</span>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h3>Request a quote</h3>
+      <form action="#" method="post">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" placeholder="GC or project">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555">
+        </div>
+        <div>
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" placeholder="Project scope, timeline, GC name..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>O'Malley Brothers, Inc. · 4302 Regency Dr, Glenview, IL 60025 · (847) 803-8920</p>
+  <p>© 2026 O'Malley Brothers, Inc. · 94 years of mechanical insulation, four generations strong.</p>
+</footer>
+
+</body>
+</html>
