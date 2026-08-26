@@ -120,6 +120,12 @@
   }
   .btn-primary { background: var(--accent); color: white; }
   .btn-primary:hover { background: var(--accent-dark); }
+  .form-note {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    text-align: center;
+  }
   .btn-ghost { background: white; color: var(--ink); border: 1px solid var(--rule); }
   /* ============ SECTIONS ============ */
   section {
@@ -193,42 +199,50 @@
     font-size: 14px;
     color: var(--ink-soft);
   }
-  /* ============ GALLERY (placeholder frames) ============ */
+  /* ============ PROJECT GRID (work cards) ============ */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
   }
   .frame {
-    aspect-ratio: 4 / 3;
-    border: 2px dashed var(--frame);
-    background: var(--bg-soft);
+    background: var(--bg);
+    border: 1px solid var(--rule);
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--frame-ink);
-    font-size: 12px;
-    text-align: center;
-    padding: 14px;
+    padding: 22px 22px 20px;
+    text-align: left;
   }
-  .frame .icon {
-    font-size: 28px;
-    margin-bottom: 6px;
-    opacity: 0.6;
+  .frame .tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-weight: 600;
   }
-  .frame strong {
-    color: var(--ink-soft);
+  .frame h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+  .frame p {
     font-size: 13px;
-    margin-bottom: 2px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
   }
   .frame-legend {
     font-size: 12px;
     color: var(--frame-ink);
-    margin-top: 14px;
+    margin-top: 18px;
     text-align: center;
-    font-style: italic;
+  }
+  .site-status {
+    font-size: 11px;
+    color: var(--frame-ink);
+    margin-top: 6px;
   }
   /* ============ STORY ============ */
   .story {
@@ -431,40 +445,40 @@
 <section class="tinted" id="projects">
   <div class="inner">
     <h2>Recent <span class="accent">projects</span>.</h2>
-    <p class="section-lede">A small selection of recent mechanical insulation work across the Chicago metro.</p>
+    <p class="section-lede">A small selection of the mechanical insulation work we've delivered across Chicagoland — hospitals, high-rises, central plants, and industrial facilities.</p>
     <div class="gallery">
       <div class="frame">
-        <div class="icon">📷</div>
-        <strong>Central Plant Insulation</strong>
-        <span>Photo placeholder</span>
+        <span class="tag">Healthcare</span>
+        <h3>Hospital mechanical room retrofit</h3>
+        <p>Phased pipe covering and duct insulation across an occupied hospital — coordinated shut-downs, infection-control protocols, zero impact to patient floors.</p>
       </div>
       <div class="frame">
-        <div class="icon">📷</div>
-        <strong>Hospital Mechanical Room</strong>
-        <span>Photo placeholder</span>
+        <span class="tag">High-Rise</span>
+        <h3>Class-A tower chilled-water upgrade</h3>
+        <p>New 6″ metallic piping risers, two-band calcium silicate covering, vapor-sealed jacketing, scheduled over tenant build-outs.</p>
       </div>
       <div class="frame">
-        <div class="icon">📷</div>
-        <strong>High-Rise Chilled Water</strong>
-        <span>Photo placeholder</span>
+        <span class="tag">Central Plant</span>
+        <h3>Central plant distribution insulation</h3>
+        <p>Chilled and heating-hot-water mains from a campus central plant, including valved equipment covers, removable pads, and acoustic treatment in the equipment room.</p>
       </div>
       <div class="frame">
-        <div class="icon">📷</div>
-        <strong>Industrial Pipe Covering</strong>
-        <span>Photo placeholder</span>
+        <span class="tag">Industrial</span>
+        <h3>Process pipe covering — manufacturing</h3>
+        <p>High-temp process piping, mineral-wool insulation, stainless jacketing, ASJ finish — built for energy retention and inspection access.</p>
       </div>
       <div class="frame">
-        <div class="icon">📷</div>
-        <strong>Duct Wrap Installation</strong>
-        <span>Photo placeholder</span>
+        <span class="tag">Energy Retrofit</span>
+        <h3>Existing-system energy retrofit</h3>
+        <p>Steam and condensate system re-cover, energy-audit-driven scope, completed in active office buildings without disrupting operations.</p>
       </div>
       <div class="frame">
-        <div class="icon">📷</div>
-        <strong>Acoustic Treatment</strong>
-        <span>Photo placeholder</span>
+        <span class="tag">Acoustic</span>
+        <h3>Acoustic treatment — occupied offices</h3>
+        <p>Internal duct liner and acoustic jacketing on supply and return runs serving occupied tenant floors — quiet HVAC without tearing open the ceiling.</p>
       </div>
     </div>
-    <p class="frame-legend">[ Photo placeholders — to be replaced with real job-site photos supplied by John / James / crew. ]</p>
+    <p class="frame-legend">Job-site photography will be added as John and James share it. Want yours featured? Send a few shots to <a href="mailto:Omalleybrothers@msn.com">Omalleybrothers@msn.com</a>.</p>
   </div>
 </section>
 
@@ -497,7 +511,7 @@
     </div>
     <div class="contact-card">
       <h3>Request a quote</h3>
-      <form action="#" method="post">
+      <form action="mailto:Omalleybrothers@msn.com" method="post" enctype="text/plain">
         <div>
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Your name" required>
@@ -511,14 +525,15 @@
           <input id="email" name="email" type="email" placeholder="you@example.com" required>
         </div>
         <div>
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555">
+          <label for="phone">Phone <span style="font-weight:400;color:var(--ink-soft);">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" placeholder="Best number to reach you">
         </div>
         <div>
           <label for="message">Project details</label>
           <textarea id="message" name="message" placeholder="Project scope, timeline, GC name..."></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Send Request</button>
+        <p class="form-note">Opens your email app and sends the details to Omalleybrothers@msn.com.</p>
       </form>
     </div>
   </div>
@@ -527,6 +542,7 @@
 <footer>
   <p>O'Malley Brothers, Inc. · 4302 Regency Dr, Glenview, IL 60025 · (847) 803-8920</p>
   <p>© 2026 O'Malley Brothers, Inc. · 94 years of mechanical insulation, four generations strong.</p>
+  <p class="site-status">Site updated August 26, 2026.</p>
 </footer>
 
 </body>
