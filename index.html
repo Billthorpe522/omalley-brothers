@@ -8,17 +8,18 @@
 <meta name="description" content="O'Malley Brothers, Inc. — 94 years of commercial insulation, pipe covering, and mechanical subcontracting in the Chicago area. Four generations. Glenview, IL.">
 <style>
   :root {
-    --ink: #1c1917;
-    --ink-soft: #57534e;
-    --rule: #e7e5e4;
-    --bg: #ffffff;
-    --bg-soft: #fafaf9;
-    --accent: #b91c1c;
-    --accent-dark: #7f1d1d;
-    --warm: #fef3c7;
-    --warm-border: #d97706;
-    --frame: #d6d3d1;
-    --frame-ink: #78716c;
+    /* Brand palette — extracted from chosen logo (Aug 26, 2026) */
+    --ink: #1a3658;             /* steel blue — primary text, type */
+    --ink-soft: #3a4e6a;        /* softer steel blue — secondary text */
+    --rule: #e7dcc8;            /* warm cream rule lines */
+    --bg: #f0e8d8;              /* warm cream paper background */
+    --bg-soft: #e8dfc9;         /* deeper warm cream — section tints */
+    --accent: #b87a47;          /* copper — primary accent */
+    --accent-dark: #8e5c33;     /* darker copper for hover */
+    --copper-light: #d4a378;    /* lighter copper for soft accents */
+    --frame: #d4c5a8;           /* warm border for cards */
+    --frame-ink: #6b5840;       /* muted warm text inside frames */
+    --paper-grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0.22  0 0 0 0 0.20  0 0 0 0 0.16  0 0 0 0.04 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>");
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -31,6 +32,17 @@
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
   }
+  /* Paper texture overlay (subtle warm grain) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: var(--paper-grain);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 1;
+  }
+  body > * { position: relative; z-index: 2; }
   /* ============ NAV ============ */
   .nav {
     position: sticky;
@@ -45,9 +57,17 @@
   }
   .nav .brand {
     font-weight: 700;
-    font-size: 17px;
+    font-size: 18px;
+    letter-spacing: -0.3px;
     color: var(--ink);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  .nav .brand-logo {
+    height: 56px;
+    width: auto;
+    display: block;
   }
   .nav .brand span { color: var(--accent); }
   .nav-links {
@@ -244,6 +264,15 @@
     color: var(--frame-ink);
     margin-top: 6px;
   }
+  .footer-mark {
+    margin: 0 auto 14px;
+    text-align: center;
+  }
+  .footer-logo {
+    height: 64px;
+    width: auto;
+    display: inline-block;
+  }
   /* ============ STORY ============ */
   .story {
     display: grid;
@@ -352,8 +381,11 @@
 </head>
 <body>
 
+<!-- Inline SVG favicon: OB monogram in brand colors -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23f0e8d8'/><circle cx='28' cy='32' r='18' fill='none' stroke='%231a3658' stroke-width='6'/><path d='M46 14 L46 50' stroke='%231a3658' stroke-width='6' stroke-linecap='round'/><path d='M46 22 Q58 22 58 32 Q58 32 46 32' fill='none' stroke='%23b87a47' stroke-width='6' stroke-linecap='round'/></svg>" />
+
 <nav class="nav">
-  <a href="#top" class="brand">O'Malley Brothers<span>.</span></a>
+  <a href="#top" class="brand"><img src="images/om-logo-CHOSEN.svg" alt="O'Malley Brothers, Inc." class="brand-logo"></a>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#story">Our Story</a>
@@ -540,6 +572,7 @@
 </section>
 
 <footer>
+  <div class="footer-mark"><img src="images/om-logo-CHOSEN.svg" alt="O'Malley Brothers, Inc." class="footer-logo"></div>
   <p>O'Malley Brothers, Inc. · 4302 Regency Dr, Glenview, IL 60025 · (847) 803-8920</p>
   <p>© 2026 O'Malley Brothers, Inc. · 94 years of mechanical insulation, four generations strong.</p>
   <p class="site-status">Site updated August 26, 2026.</p>

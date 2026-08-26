@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  O'Malley Brothers, Inc. — Logo Variation A
+  Strategy: Classic circular trade badge
+  Use: hard hat sticker, yard sign, invoice header, formal contexts
+  Palette: steel blue #1f3a5f · copper #b87333 · cream #f5efe2 · charcoal #2b2b2b
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="O'Malley Brothers Inc. — Established 1931 — circular trade badge logo">
+  <title>O'Malley Brothers, Inc. — Est. 1931</title>
+
+  <!-- Cream background -->
+  <rect width="600" height="600" fill="#f5efe2"/>
+
+  <!-- Outer ring -->
+  <circle cx="300" cy="300" r="260" fill="none" stroke="#1f3a5f" stroke-width="6"/>
+  <!-- Inner ring -->
+  <circle cx="300" cy="300" r="246" fill="none" stroke="#1f3a5f" stroke-width="2"/>
+
+  <!-- Top arc text: O'MALLEY BROTHERS -->
+  <defs>
+    <path id="topArc" d="M 80 300 A 220 220 0 0 1 520 300" fill="none"/>
+    <path id="bottomArc" d="M 90 320 A 210 210 0 0 0 510 320" fill="none"/>
+  </defs>
+  <text font-family="'Rockwell', 'Roboto Slab', 'Courier New', serif" font-weight="700" font-size="34" letter-spacing="6" fill="#1f3a5f">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">O'MALLEY BROTHERS</textPath>
+  </text>
+
+  <!-- Bottom arc text: INC · EST. 1931 -->
+  <text font-family="'Rockwell', 'Roboto Slab', 'Courier New', serif" font-weight="700" font-size="22" letter-spacing="6" fill="#1f3a5f">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">INC · EST · 1931</textPath>
+  </text>
+
+  <!-- Rivet dots flanking the bottom text -->
+  <circle cx="160" cy="468" r="4" fill="#b87333"/>
+  <circle cx="440" cy="468" r="4" fill="#b87333"/>
+
+  <!-- Center: insulation-wrapped pipe cross-section -->
+  <g transform="translate(300 300)">
+    <!-- Outer cream jacket (insulation) -->
+    <circle r="105" fill="#f5efe2" stroke="#1f3a5f" stroke-width="4"/>
+    <!-- Copper jacket band (slimmer, single ring) -->
+    <circle r="80" fill="none" stroke="#b87333" stroke-width="5"/>
+    <!-- Pipe cross-section core -->
+    <circle r="48" fill="#1f3a5f"/>
+    <!-- Pipe center hole -->
+    <circle r="14" fill="#2b2b2b"/>
+    <!-- Highlight seam on jacket (suggests wrap) -->
+    <line x1="-105" y1="0" x2="105" y2="0" stroke="#1f3a5f" stroke-width="1" opacity="0.4"/>
+  </g>
+</svg>

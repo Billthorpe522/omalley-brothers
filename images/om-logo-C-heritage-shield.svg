@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  O'Malley Brothers, Inc. — Logo Variation C
+  Strategy: Heritage shield with copper rivet accents
+  Use: shop wall plaque, formal letterhead, family-history contexts
+  Palette: steel blue #1f3a5f · copper #b87333 · cream #f5efe2 · charcoal #2b2b2b
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="O'Malley Brothers Inc. — heritage shield logo">
+  <title>O'Malley Brothers, Inc. — 1931</title>
+
+  <rect width="600" height="600" fill="#f5efe2"/>
+
+  <!-- Shield path: vertical, rounded top, pointed bottom -->
+  <defs>
+    <clipPath id="shield">
+      <path d="M 300 80
+               L 470 130
+               Q 490 135 490 155
+               L 490 380
+               Q 490 470 300 540
+               Q 110 470 110 380
+               L 110 155
+               Q 110 135 130 130
+               Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Shield fill + outline -->
+  <g>
+    <path d="M 300 80
+             L 470 130
+             Q 490 135 490 155
+             L 490 380
+             Q 490 470 300 540
+             Q 110 470 110 380
+             L 110 155
+             Q 110 135 130 130
+             Z" fill="#f5efe2" stroke="#1f3a5f" stroke-width="5"/>
+    <!-- Inner thin border -->
+    <path d="M 300 100
+             L 460 145
+             Q 475 148 475 165
+             L 475 378
+             Q 475 460 300 525
+             Q 125 460 125 378
+             L 125 165
+             Q 125 148 140 145
+             Z" fill="none" stroke="#1f3a5f" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Rivet dots, vertical, on each side -->
+  <g fill="#b87333">
+    <circle cx="155" cy="200" r="4"/>
+    <circle cx="155" cy="260" r="4"/>
+    <circle cx="155" cy="320" r="4"/>
+    <circle cx="155" cy="380" r="4"/>
+    <circle cx="445" cy="200" r="4"/>
+    <circle cx="445" cy="260" r="4"/>
+    <circle cx="445" cy="320" r="4"/>
+    <circle cx="445" cy="380" r="4"/>
+  </g>
+
+  <!-- Wordmark inside shield, stacked -->
+  <g text-anchor="middle">
+    <text x="300" y="230" font-family="'Rockwell', 'Roboto Slab', 'Courier New', serif" font-weight="800" font-size="56" fill="#1f3a5f" letter-spacing="3">O'MALLEY</text>
+    <text x="300" y="295" font-family="'Rockwell', 'Roboto Slab', 'Courier New', serif" font-weight="800" font-size="56" fill="#1f3a5f" letter-spacing="3">BROTHERS</text>
+    <text x="300" y="335" font-family="'Rockwell', 'Roboto Slab', 'Courier New', serif" font-weight="600" font-size="20" fill="#2b2b2b" letter-spacing="8">INC.</text>
+    <!-- Copper rule -->
+    <line x1="220" y1="365" x2="380" y2="365" stroke="#b87333" stroke-width="3"/>
+    <!-- 1931 -->
+    <text x="300" y="430" font-family="'Rockwell', 'Roboto Slab', 'Courier New', serif" font-weight="800" font-size="64" fill="#b87333" letter-spacing="6">1931</text>
+    <text x="300" y="475" font-family="'Rockwell', 'Roboto Slab', 'Courier New', serif" font-weight="600" font-size="14" fill="#1f3a5f" letter-spacing="6">CHICAGO · IL</text>
+  </g>
+</svg>
